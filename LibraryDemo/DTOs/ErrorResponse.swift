@@ -2,13 +2,15 @@
 //  ErrorResponse.swift
 //  LibraryDemo
 //
-//  Created by Luiz SSB on 3/23/19.
+//  Created by fibbauru-14 on 23/03/19.
 //  Copyright © 2019 FIB. All rights reserved.
 //
 
 import Foundation
 
-class ErrorResponse: BaseDTO {
+class ErrorResponse : BaseDTO {
     var code: Int?
     var message: String?
 }
+
+

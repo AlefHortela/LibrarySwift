@@ -2,17 +2,18 @@
 //  AuthorTableViewCell.swift
 //  LibraryDemo
 //
-//  Created by Luiz SSB on 3/23/19.
+//  Created by fibbauru-14 on 23/03/19.
 //  Copyright © 2019 FIB. All rights reserved.
 //
 
 import UIKit
 
 class AuthorTableViewCell: UITableViewCell {
-    static let rowHeight: CGFloat = 65
+    static let alturaCelula: CGFloat = 80
 
-    @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var ageLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,10 +25,10 @@ class AuthorTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    var author: (name: String, age: Int)? {
+    var author: Author? {
         didSet {
             nameLabel.text = author?.name
-            ageLabel.text = author?.age.description
+            ageLabel.text = author?.objectId
         }
     }
     

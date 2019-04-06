@@ -2,41 +2,34 @@
 //  LibraryTabBarController.swift
 //  LibraryDemo
 //
-//  Created by Luiz SSB on 3/23/19.
+//  Created by fibbauru-14 on 23/03/19.
 //  Copyright © 2019 FIB. All rights reserved.
 //
 
 import UIKit
 
 class LibraryTabBarController: UITabBarController {
-    private func configureTab(
-        for viewController: UIViewController,
-        title: String, iconName: String
-        ) -> UIViewController {
-        let navigation =
-            UINavigationController(
-                rootViewController: viewController
-            )
-        navigation.navigationBar.isTranslucent =
-                false
+    
+    private func configureTab(for viewController: UIViewController,
+        title: String, iconName: String) -> UIViewController {
+        
+        let navigation = UINavigationController(rootViewController: viewController)
+        navigation.navigationBar.isTranslucent = false
         viewController.title = title
         navigation.tabBarItem.title = title
-        navigation.tabBarItem.image =
-            UIImage(named: iconName)
+        navigation.tabBarItem.image = UIImage(named: iconName)
         
         return navigation
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        viewControllers = [
-            configureTab(
-                for: AuthorsTableViewController(style: .plain),
-                title: NSLocalizedString("Autores", comment: ""),
-                iconName: "iconAuthors"
-            )
+        viewControllers = [configureTab(for: AuthorsTableViewController(style: .plain), title: NSLocalizedString("Autores", comment: ""), iconName: "iconAuthors") ,
+                           configureTab(for: BooksCollectionViewController(), title:
+            NSLocalizedString("Livros", comment: ""), iconName: "iconBook")
         ]
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

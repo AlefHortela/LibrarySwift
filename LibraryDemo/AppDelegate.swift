@@ -19,10 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions
             launchOptions: [UIApplicationLaunchOptionsKey: Any]?
     ) -> Bool {
-        AlamofireServiceClient().getAuthors(withNameLike: "") { (authors, error) in
-            print("Authors", authors, "Error", error)
-        }
-        
         let rootViewController = LibraryTabBarController()
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.addSubview(rootViewController.view)
