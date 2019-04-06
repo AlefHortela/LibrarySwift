@@ -2,11 +2,9 @@
   Localizable.strings
   LibraryDemo
 
-  Created by FIBBAURU on 23/03/19.
+  Created by Luiz SSB on 3/23/19.
   Copyright © 2019 FIB. All rights reserved.
 */
 
-// Sintace como criar uma string comuns
-//"<key>" = "<Tradução>";
-
+// Strings comuns
 "Idade: " = "Idade: ";

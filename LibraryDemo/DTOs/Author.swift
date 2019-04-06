@@ -2,12 +2,12 @@
 //  Author.swift
 //  LibraryDemo
 //
-//  Created by fibbauru-15 on 23/03/19.
+//  Created by Luiz SSB on 3/23/19.
 //  Copyright © 2019 FIB. All rights reserved.
 //
 
 import Foundation
 
-class Author : BaseDTO{
+class Author: BaseDTO {
     var name: String?
 }

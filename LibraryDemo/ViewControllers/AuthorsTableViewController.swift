@@ -2,7 +2,7 @@
 //  AuthorsTableViewController.swift
 //  LibraryDemo
 //
-//  Created by FIBBAURU on 23/03/19.
+//  Created by Luiz SSB on 3/23/19.
 //  Copyright © 2019 FIB. All rights reserved.
 //
 
@@ -18,71 +18,65 @@ class AuthorsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
         tableView.register(
             UINib(
                 nibName: String(describing: AuthorTableViewCell.self),
                 bundle: nil
-            )
-            , forCellReuseIdentifier: "authorCell")
-        tableView.rowHeight = AuthorTableViewCell.rowHight
+            ),
+            forCellReuseIdentifier: "authorCell"
+        )
+        tableView.rowHeight =
+            AuthorTableViewCell.rowHeight
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
-/*
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-*/
     
     let authors: [(name: String, age: Int)] =
         [
-            ("Alef", 25),
-            ("Dnnccrrr", 31),
-            (name: "Rafael 1", age: 25),
-            (name: "Rafael 2", age: 28)
+            ("Foo", 42),
+            ("Bar", 66),
+            (name: "Fulano", age: 83)
         ]
-    
+
+    // MARK: - Table view data source
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return authors.count
     }
 
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell {
+        /* var cell = tableView.dequeueReusableCell(
+            withIdentifier: "authorCell"
+        )
+
+        if cell == nil {
+            cell = UITableViewCell(
+                style: .subtitle,
+                reuseIdentifier: "authorCell"
+            )
+            cell?.accessoryType = .detailDisclosureButton
+            cell?.imageView?.image = UIImage(named: "iconAuthors")
+        }
         
-//        var cell = tableView.dequeueReusableCell(withIdentifier: "authorCell")
-//
-//        // Configure the cell...
-//        if cell == nil {
-//                cell = UITableViewCell(
-//                    style: .subtitle,
-//                    reuseIdentifier: "authorCell"
-//            )
-//            cell?.accessoryType = .detailDisclosureButton
-//            cell?.imageView?.image = UIImage(named: "iconAuthors")
-//        }
-//
-//        let author = authors[indexPath.row]
-//        cell?.textLabel?.text = author.name
-//        // concatenar com o item no arquivo Localizable
-//        cell?.detailTextLabel?.text = NSLocalizedString("Idade: ", comment: "") + author.age.description
-//
-//        return cell!
-        
+        let author = authors[indexPath.row]
+        cell?.textLabel?.text = author.name
+        cell?.detailTextLabel?.text =
+            NSLocalizedString("Idade: ", comment: "") +
+            author.age.description
+
+        return cell!*/
         let cell = tableView.dequeueReusableCell(
-            withIdentifier: "authorCell",
-            for: indexPath) as! AuthorTableViewCell
+            withIdentifier: "authorCell", for: indexPath
+        ) as! AuthorTableViewCell
         cell.author = authors[indexPath.row]
         return cell
     }
- 
 
     /*
     // Override to support conditional editing of the table view.

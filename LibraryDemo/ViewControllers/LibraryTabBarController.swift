@@ -2,7 +2,7 @@
 //  LibraryTabBarController.swift
 //  LibraryDemo
 //
-//  Created by FIBBAURU on 23/03/19.
+//  Created by Luiz SSB on 3/23/19.
 //  Copyright © 2019 FIB. All rights reserved.
 //
 
@@ -11,26 +11,25 @@ import UIKit
 class LibraryTabBarController: UITabBarController {
     private func configureTab(
         for viewController: UIViewController,
-        title: String,
-        iconName: String
+        title: String, iconName: String
         ) -> UIViewController {
-        
-        let navigation = UINavigationController(
-            rootViewController: viewController
-        )
-        navigation.navigationBar.isTranslucent = false
+        let navigation =
+            UINavigationController(
+                rootViewController: viewController
+            )
+        navigation.navigationBar.isTranslucent =
+                false
         viewController.title = title
         navigation.tabBarItem.title = title
-        navigation.tabBarItem.image = UIImage(named: iconName)
+        navigation.tabBarItem.image =
+            UIImage(named: iconName)
         
         return navigation
-        
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         viewControllers = [
             configureTab(
                 for: AuthorsTableViewController(style: .plain),
